@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}",
+            },
+            "command": "ponyc -V 0 --debug -o bin",
+            "problemMatcher": "$ponyc-matcher",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "ponyc -V 0 -o bin -b ${fileBasenameNoExtension} && bin/${fileBasenameNoExtension} input",
+            "problemMatcher": "$ponyc-matcher",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
