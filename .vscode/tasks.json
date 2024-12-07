@@ -20,7 +20,7 @@
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "command": "ponyc -V 0 -o bin -b ${fileBasenameNoExtension} && bin/${fileBasenameNoExtension} input",
+            "command": "ponyc -V 0 -d -o bin -b ${fileBasenameNoExtension} && bin/${fileBasenameNoExtension} input",
             "problemMatcher": "$ponyc-matcher",
             "group": {
                 "kind": "test",
